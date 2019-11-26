@@ -1,0 +1,36 @@
+
+   /!\ subdet 20 had been renamed 30
+              21 and 22 are absent
+
+   // Declaration of leaf types
+   Double_t        chi2Si5MuM; ! chi2 del fit nei Si del mu-
+   Double_t        x_pos_mum[12]; ! punti della traccia del mu- nei Si
+   Double_t        x_pos_mum_err[12]; ! errori corrispondenti
+   Double_t        z_x_pos_mum[12]; ! z corrispondenti
+   Double_t        x_pos_DT_mum[8]; ! punti del mu- nei DT
+   Double_t        z_pos_DT_mum[8]; ! z corrispondenti
+   Double_t        p_mum; ! impulso del mu- usando i punti nei Si
+   Double_t        p_mup; ! impulso del mu+
+   Double_t        chi2Si5MuP; ! chi2 del fit nei Si del mu+
+   Double_t        x_pos_mup[12]; ! corrisponde a x_pos_mum per il mu+
+   Double_t        x_pos_mup_err[12]; ! mu+
+   Double_t        z_x_pos_mup[12]; ! mu+
+   Double_t        x_pos_DT_mup[8]; ! mu+
+   Double_t        z_pos_DT_mup[8]; ! mu+
+   Int_t           subdet[100]; ! subdet degli hits dell'evento
+   Int_t           itrack[100]; ! +1(-1) per gli hits del mu-(mu+), 0 se non fa traccia
+   Double_t        xh[100]; ! ogni spiegazione e' inutile
+   Double_t        yh[100]; ! ogni spiegazione e' inutile
+   Double_t        zh[100]; ! ogni spiegazione e' inutile
+   Int_t           nhits; ! ogni spiegazione e' inutile
+   Double_t        Calo_EnDep[100]; ! vettore dei calo, diventera' lungo 25
+   Int_t           event_type; ! place holder per ora
+
+   // MC only
+   Double_t        gen_pos_mum[12] ! mu- x y z pz py pz @ 20 x y z px py pz @ 31
+   Double_t        gen_pos_mup[12] ! mu+ x y z pz py pz @ 20 x y z px py pz @ 31
+   Double_t        gen_vtx_mum[7] ! mu- Beam X Y Z CX CY CZ Ene
+   Double_t        gen_vtx_mup[7] ! mu+ Beam X Y Z CX CY CZ Ene
+
+   selection: "p_mup>0&&p_mum>0"
+              "p_mup>0&&p_mum>0&&max(chi2Si5MuM,chi2Si5MuP)<100."
